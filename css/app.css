@@ -1,0 +1,348 @@
+/** Agregar estos dos selectores a cada documento nos permite
+que las cajas no se salgan de los límites marcados con el width
+o el high  **/
+
+/* Todos los proyectos */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1Rem = 10px */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2; /* Interlinéado */
+}
+
+/* GLOBALES */
+h1, 
+h2, 
+h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 5rem 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto; 
+}
+
+.btn {
+    background-color: #8cbc00;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background-color .3s ease-out;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #769c02;
+}
+
+/* UTILIDADES */
+.text-center {
+    text-align: center;
+}
+
+.max-width-30 {
+    max-width: 30rem;
+}
+
+/* HEADER Y NAVEGACION */
+.nombre-sitio {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.contenedor-navegacion {
+    border-top: .1rem solid #e1e1e1; 
+}
+
+.nombre-sitio span {
+    color: #037bc0; 
+}
+
+.nav-principal {
+    padding: 2rem 0; 
+    display: flex;
+    justify-content: space-between;
+}
+
+/* BOX MODEL */
+.hero {
+    background-image: url("../img/principal.jpg");
+    background-size: cover;
+    background-position: center center; /* Para posicionar la foto */
+    height: 55rem;
+}
+
+/* Título doble color */
+.contenedor span {
+    color: #037bc0; 
+}
+
+/* CATEGORIAS */
+.categorias {
+    padding-top: 5rem;
+}
+
+.categoria a {
+    text-align: center;
+    display: block; 
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.categoria a:hover {
+    background-color: #037bc0 ;
+    color: #FFF;
+    border-bottom-right-radius: 1rem;
+}
+
+.listado-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* BLOQUE NOSOTROS */
+
+/* Para dividir el div en dos partes, para poner la imagen en la parte izq
+y el texto en la derecha */
+.sobre-nosotros {
+    background-image: linear-gradient( to right, transparent 50%, #037bc0 50%, #037bc0 100% ), url("../img/nosotros.jpg");
+    background-position: left center;
+    padding: 10rem 0;
+    background-repeat: no-repeat;
+    background-size: 100%, 120rem;
+} 
+
+/* Con Grid */
+.sobre-nosotros-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8rem;
+}
+
+.texto-nosotros {
+    grid-column: 2 / 3; /* Se posicion desde la línea 2 a la 3 */
+    color: #fff;
+}
+
+
+/*
+Con flexBox
+
+.sobre-nosotros-grid {
+    display: flex; 
+    justify-content: flex-end; 
+}
+
+.texto-nosotros {
+    flex-basis: 50%; 
+    padding-left: 10rem; 
+}
+
+*/
+
+/* Listado de productos */
+.contenido-principal {
+    padding-top: 5rem;
+}
+
+.listado-productos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem; 
+}
+
+/* Posicionamos todos los elementos en el grid */
+.producto:nth-child(1) {
+    grid-column: 1 / 7; 
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+/* Object fit */
+/* indica cómo el contenido de un elemento reemplazado, por ejemplo un <img> 
+debería redimensionarse para ajustarse a su contenedor. */
+.producto:nth-child(1) img {
+    height: 43rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.producto:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.producto:nth-child(3) {
+    grid-column: 4 / 7; 
+}
+
+/* Object fit */
+.producto:nth-child(2) img,
+.producto:nth-child(3) img  {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.producto:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.producto:nth-child(5) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.producto:nth-child(6) {
+    grid-column: 5 / 7; 
+}
+
+.producto {
+    background-color: #037bc0;
+}
+
+.texto-producto {
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+
+.texto-producto h3 {
+    margin: 0;
+}
+
+.texto-producto p {
+    margin:0 0 .5rem 0; 
+}
+
+.texto-producto .precio {
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+/** FOOTER **/
+.site-footer {
+    border-top: 1px solid #e1e1e1;
+    margin-top: 5rem;
+    padding-top: 5rem;
+}
+
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; 
+}
+
+/*
+Con flexBox
+.grid-footer {
+    display: flex; 
+    gap: 2rem; 
+}
+
+.grid-footer div {
+    flex: 1;    /****Factor de crecimiento/
+}
+*/
+.site-footer h3 {
+    margin-bottom: .5rem;
+}
+
+.footer-menu a {
+    display: block;
+}
+
+.copyright {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+/** NOSOTROS **/
+.contenido-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    column-gap: 4rem;
+}
+
+/** BLOG **/
+.contenedor-blog {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+}
+
+.entrada {
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type {
+    border: none;
+    /*Elimina el borde en la última entrada del blog*/
+}
+
+.entrada-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.entrada-meta p {
+    font-weight: 700;
+}
+
+.entrada-meta span {
+    color: #037bc0;
+}
+
+.contenido-entrada-blog {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+/** GALERIA **/
+
+.galeria {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
